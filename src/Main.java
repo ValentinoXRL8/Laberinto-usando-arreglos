@@ -24,10 +24,11 @@ public class Main {
       };
 
         for(int fila = 0; fila < mapa.length; fila++){
-            for(int columna = 0; col < mapa[fila].length; col++){
-                System.out.print(mapa[fila][col] + " ");
+            for(int columna = 0; columna < mapa[fila].length; columna++){
+                System.out.print(mapa[fila][columna] + " ");
 
             }
+            System.out.println();
         }
     }
 }
