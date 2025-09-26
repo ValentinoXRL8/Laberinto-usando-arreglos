@@ -2,7 +2,7 @@ public class Main {
     public static void main(String[] args) {
         char[][] mapa = {
                 {'#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#'},
-                {'#', 'P', ' ', ' ', ' ', ' ', '#', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '#'},
+                {'#', '#', ' ', ' ', ' ', ' ', '#', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '#'},
                 {'#', ' ', '#', '#', '#', ' ', '#', ' ', '#', '#', '#', '#', '#', ' ', '#', '#', '#', '#', ' ', '#'},
                 {'#', ' ', ' ', ' ', '#', ' ', ' ', ' ', '#', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '#', ' ', '#'},
                 {'#', '#', '#', ' ', '#', '#', '#', '#', '#', ' ', '#', '#', '#', '#', '#', '#', ' ', '#', ' ', '#'},
@@ -14,12 +14,24 @@ public class Main {
                 {'#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#'}
         };
 
+        int fila = 1;
+        int columna = 1;
+
         System.out.println("=== LABERINTO ===\n");
         System.out.println("Leyenda: P = Jugador, M = Meta, # = Pared, ' ' = Camino\n");
 
-        for(int fila = 0; fila < mapa.length; fila++) {
-            for(int columna = 0; columna < mapa[fila].length; columna++) {
-                System.out.print(mapa[fila][columna] + " ");
+        for(int f = 0; f < mapa.length; f++) {
+            for(int c = 0; c < mapa[f].length; c++) {
+                System.out.print(mapa[f][c] + " ");
+            }
+            System.out.println();
+        }
+        mapa[fila][columna] = ' ';
+        columna++;
+        mapa[fila][columna] = '@';
+        for(int f = 0; f < mapa.length; f++) {
+            for(int c = 0; c < mapa[f].length; c++) {
+                System.out.print(mapa[f][c] + " ");
             }
             System.out.println();
         }
