@@ -1,5 +1,11 @@
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
+        System.out.println("=== LABERINTO ===\n Reglas del juego: \n");
+        System.out.println("Usa las teclas para poder moverte entre el laberinto y llegar a la meta");
+        System.out.println("@ = Jugador, M = Meta, # = Pared\n");
+
         char[][] mapa = {
                 {'#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#'},
                 {'#', '#', ' ', ' ', ' ', ' ', '#', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '#'},
@@ -18,11 +24,8 @@ public class Main {
         mapaPrinter.printMapa(mapa);
 
         int fila = 1;
-        int columna = 1;
-
-        System.out.println("=== LABERINTO ===\n");
-        System.out.println("Leyenda: P = Jugador, M = Meta, # = Pared, ' ' = Camino\n");
-
+        int columna = 2;
+        mapa[fila][columna] = '@';
         mapa[fila][columna] = ' ';
         columna++;
         mapa[fila][columna] = '@';
