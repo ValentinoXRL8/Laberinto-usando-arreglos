@@ -29,31 +29,43 @@ public class Main {
         int columna = 2;
         mapa[fila][columna] = '@';
 
-        //boolean Laberinto = true;
+        boolean Laberinto = true;
 
-        while (true) {
+        while (Laberinto) {
             mapaPrinter.printMapa(mapa);
-           String movimiento = scanner.nextLine().toUpperCase();
+            String movimiento = scanner.nextLine().toUpperCase();
 
-           //int nuevafila = fila;
-            //int nuevacolumna = columna;
-            mapa[fila][columna] = ' ';
+            int nuevafila = fila;
+            int nuevacolumna = columna;
 
             switch (movimiento) {
-                case "W": fila--;
+                case "W": nuevafila--;
                 break;
-                case "S": fila++;
+                case "S": nuevafila++;
                 break;
-                case "A": columna--;
+                case "A": nuevacolumna--;
                 break;
-                case "D": columna++;
+                case "D": nuevacolumna++;
                 break;
-                //default:
-                  //  System.out.println("Solo puedes usar las teclas del juego");
-                    //continue;
-            }//Laberinto = false;
+                default:
+                    System.out.println("Solo puedes usar las teclas del juego");
+                    continue;
+            }
+
+            if (nuevafila >= 0 && nuevafila < mapa.length && nuevacolumna >= 0 && nuevacolumna < mapa[0].length) {
+
+                if (mapa[nuevafila][nuevacolumna] == ' ') {
+                    mapa[nuevafila][nuevacolumna] = ' ';
+                    fila = nuevafila;
+                    columna = nuevacolumna;
+                    mapa[fila][columna] = '@';
+                }else if (mapa[nuevafila][columna] == 'M') {
+                 System.out.println("Llegaste a la meta");
+                 Laberinto = false;
+                }
+            }
         }
 
-        //mapaPrinter.printMapa(mapa);
+        mapaPrinter.printMapa(mapa);
     }
 }
