@@ -23,35 +23,37 @@ public class Main {
         };
 
         MapaPrinter mapaPrinter = new MapaPrinter();
+        Scanner scanner = new Scanner(System.in);
 
         int fila = 1;
         int columna = 2;
         mapa[fila][columna] = '@';
 
-        boolean Laberinto = true;
+        //boolean Laberinto = true;
 
-        while (Laberinto) {
+        while (true) {
             mapaPrinter.printMapa(mapa);
-            String movimiento = scanner.nextLine().toUpperCase();
+           String movimiento = scanner.nextLine().toUpperCase();
 
-            int nuevafila = fila;
-            int nuevacolumna = columna;
+           //int nuevafila = fila;
+            //int nuevacolumna = columna;
+            mapa[fila][columna] = ' ';
 
             switch (movimiento) {
-                case "W": nuevafila--;
+                case "W": fila--;
                 break;
-                case "S": nuevafila++;
+                case "S": fila++;
                 break;
-                case "A": nuevafila--;
+                case "A": columna--;
                 break;
-                case "D": nuevafila++;
+                case "D": columna++;
                 break;
-                default:
-                    System.out.println("Solo puedes usar las teclas del juego");
-                    continue;
-            }
+                //default:
+                  //  System.out.println("Solo puedes usar las teclas del juego");
+                    //continue;
+            }//Laberinto = false;
         }
 
-        mapaPrinter.printMapa(mapa);
+        //mapaPrinter.printMapa(mapa);
     }
 }
