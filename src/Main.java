@@ -26,8 +26,13 @@ public class Main {
         int fila = 1;
         int columna = 2;
         mapa[fila][columna] = '@';
+
         mapa[fila][columna] = ' ';
         columna++;
+        mapa[fila][columna] = '@';
+
+        mapa[fila][columna] = ' ';
+        fila++;
         mapa[fila][columna] = '@';
 
         mapaPrinter.printMapa(mapa);
