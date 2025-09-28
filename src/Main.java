@@ -27,6 +27,7 @@ public class Main {
 
         int fila = 1;
         int columna = 2;
+        int pasos = 0;
         mapa[fila][columna] = '@';
 
         boolean Laberinto = true;
@@ -39,13 +40,21 @@ public class Main {
             int nuevacolumna = columna;
 
             switch (movimiento) {
-                case "W": nuevafila--;
+                case "W":
+                    nuevafila--;
+                    pasos++;
                 break;
-                case "S": nuevafila++;
+                case "S":
+                    nuevafila++;
+                    pasos++;
                 break;
-                case "A": nuevacolumna--;
+                case "A":
+                    nuevacolumna--;
+                    pasos++;
                 break;
-                case "D": nuevacolumna++;
+                case "D":
+                    nuevacolumna++;
+                    pasos++;
                 break;
                 default:
                     System.out.println("Solo puedes usar las teclas del juego");
@@ -55,8 +64,9 @@ public class Main {
             if (nuevafila >= 0 && nuevafila < mapa.length && nuevacolumna >= 0 && nuevacolumna < mapa[0].length) {
 
                 if (mapa[nuevafila][nuevacolumna] == 'M') {
-                    System.out.println("Llegaste a la meta");
                     Laberinto = false;
+                    System.out.println("Llegaste a la meta");
+                    System.out.println("Pasos dados: " + pasos);
                 }else if (mapa[nuevafila][nuevacolumna] == ' ') {
                     mapa[nuevafila][nuevacolumna] = ' ';
                     fila = nuevafila;
