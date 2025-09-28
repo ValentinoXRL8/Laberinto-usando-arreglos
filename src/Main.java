@@ -54,18 +54,21 @@ public class Main {
 
             if (nuevafila >= 0 && nuevafila < mapa.length && nuevacolumna >= 0 && nuevacolumna < mapa[0].length) {
 
-                if (mapa[nuevafila][nuevacolumna] == ' ') {
+                if (mapa[nuevafila][nuevacolumna] == 'M') {
+                    System.out.println("Llegaste a la meta");
+                    Laberinto = false;
+                }else if (mapa[nuevafila][nuevacolumna] == ' ') {
                     mapa[nuevafila][nuevacolumna] = ' ';
                     fila = nuevafila;
                     columna = nuevacolumna;
                     mapa[fila][columna] = '@';
-                }else if (mapa[nuevafila][columna] == 'M') {
-                 System.out.println("Llegaste a la meta");
-                 Laberinto = false;
                 }
             }
         }
 
         mapaPrinter.printMapa(mapa);
+        scanner.close();
     }
+
+
 }
